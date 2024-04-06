@@ -7,4 +7,9 @@ define('DB_USER','root');
 define('DB_PASSWORD','');
 // define db name 
 define('DB_DATABASE','oopdb');
+
+include_once('models/Dbconnect.php');
+
+$db = new Dbconnect;
+
 ?>
