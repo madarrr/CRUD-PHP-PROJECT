@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // define the hostname or ip adress of the mysql server local host means the server is on the same machine where the php script is execute
 define('DB_HOST','localhost');
 // define db user in localhost environnement
@@ -17,6 +19,13 @@ $db = new Dbconnect;
 function base_url($slug)
 {
     echo SITE_URL.$slug;
+}
+function redirect($message,$page)
+{
+    $redirectTo = SITE_URL.$page;
+    $_SESSION['message'] = "$message";
+    header("Location: $redirectTo");
+    exit(0);
 }
 // use to directly escape a data to secure them to usage in sql 
 function validateInput($dbconn,$input)

@@ -1,5 +1,6 @@
 <?php
 include_once(__DIR__.'/../config/app.php');
+include_once(__DIR__.'/../admin/authentification.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,15 +16,19 @@ include_once(__DIR__.'/../config/app.php');
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
+    
                 <div class="card">
                     <div class="card-header">
                     <h4>REGISTER PAGE</h4>
                     </div>
+                    <?php
+                    include('message.php');
+                     ?>
                     <div class="card-body">
     <form action="" method="POST">
                         <div class="mb-3">
                             <label for="">Name</label>
-                            <input type="text" name="name" id="" class="form-control">
+                            <input type="text" name="nom" id="" class="form-control">
                         </div>      
                         <div class="mb-3">  
                             <label for="">Surname</label>
