@@ -8,7 +8,7 @@ define('DB_PASSWORD','');
 // define db name 
 define('DB_DATABASE','oopdb');
 
-include_once('models/Dbconnect.php');
+include_once(__DIR__.'/../models/Dbconnect.php');
 
 $db = new Dbconnect;
 
