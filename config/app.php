@@ -8,8 +8,15 @@ define('DB_PASSWORD','');
 // define db name 
 define('DB_DATABASE','oopdb');
 
+define('SITE_URL','http://localhost/oop-crud-project/');
+
 include_once(__DIR__.'/../models/Dbconnect.php');
 
 $db = new Dbconnect;
+
+function base_url($slug)
+{
+    echo SITE_URL.$slug;
+}
 
 ?>
