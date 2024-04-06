@@ -18,5 +18,10 @@ function base_url($slug)
 {
     echo SITE_URL.$slug;
 }
+// use to directly escape a data to secure them to usage in sql 
+function validateInput($dbconn,$input)
+{
+return mysqli_real_escape_string($dbconn,$input);
+}
 
 ?>
