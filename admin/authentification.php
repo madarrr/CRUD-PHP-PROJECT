@@ -14,10 +14,27 @@ if(isset($_POST['register_btn']))
  $result_password = $register->confirmPassword($password,$confirm_password);
  if($result_password)
  {
-
- }else{
+    $result_user = $register->isUserExist($email);
+    if($result_user)
+    {
+        redirect("Aleardy Exists","views/registration.php");
+    }
+    else
+    {
+       $register_query = $register->registration($nom,$surname,$email,$password);
+       if($register_query)
+       {
+        redirect(" Registered successfully","views/login .php");
+       }else
+       {
+        redirect("Aleardy Exists","views/registration.php");
+       }
+    }
+}
+ else
+ {
     redirect("password does not match","views/registration.php");
  }
 }
 
-?>
+?> 
